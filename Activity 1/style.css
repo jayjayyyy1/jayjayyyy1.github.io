@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #ffe6e6;
+    color: #990000;
+    }
+    
+   
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #cc0000;
+    color: white;
+    }
+    
+    header .logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    }
+    
+    header .login form {
+    display: flex;
+    gap: 10px;
+    }
+    
+    header .login input {
+    padding: 5px;
+    border-radius: 5px; 
+    border: 1px solid #990000;
+    width: 120px; 
+    }
+    
+    header .login button {
+    background-color: white;
+    color: #cc0000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    
+   
+    main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    padding: 20px;
+    }
+    
+    .signup {
+    width: 30%; 
+    background-color: #ffcccc;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .signup h2 {
+    color: #a10d0d;
+    text-align: center;
+    }
+    
+    .signup p {
+    text-align: center;
+    font-weight: bold;
+    }
+    
+    
+    .signup form input,
+    .signup form select {
+    width: calc(100% - 20px); 
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px; 
+    border: 1px solid #990000;
+    outline: none;
+    }
+    
+    .signup form button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%; 
+    font-size: 16px;
+    }
+    
+    .birthday select {
+    width: 30%; 
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #990000;
+    }
+    
+    .gender label {
+    margin-right: 15px;
+    }
