@@ -16,11 +16,11 @@ body {
     }
     
     header .logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-    }
-    
+        height: 40px;
+        width: auto;
+        display: block;
+        }
+        
     header .login form {
     display: flex;
     gap: 10px;
