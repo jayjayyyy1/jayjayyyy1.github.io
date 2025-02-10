@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Of the Week</title>
+    <link rel="stylesheet" href="style.css">
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="day-box" box-day="Monday">Monday</button>
+        <button class="day-box" box-day="Tuesday">Tuesday</button>
+        <button class="day-box" box-day="Wednesday">Wednesday</button>
+        <button class="day-box" box-day="Thursday">Thursday</button>
+        <button class="day-box" box-day="Friday">Friday</button>
+        <button class="day-box" box-day="Saturday">Saturday</button>
+        <button class="day-box" box-day="Sunday">Sunday</button>
+    </div>
+
+
+
+    <script>
+       let currentBox = null;
+
+const colors = {
+    'Monday': '#E7C2C5',
+    'Tuesday': '#EDE28A',
+    'Wednesday': '#466588',
+    'Thursday': '#CBA9D0',
+    'Friday': '#3E5D40',
+    'Saturday': '#CB7472',
+    'Sunday': '#7B6B65'
+};
+
+document.querySelectorAll('.day-box').forEach(button => {
+    const day = button.getAttribute('box-day');
+    button.style.backgroundColor = colors[day];
+    button.addEventListener('click', () => {
+        const day = button.getAttribute('box-day');
+        const color = colors[day] || '#ffffff';
+
+        if (currentBox) {
+            currentBox.style.top = '-200px';
+            currentBox.style.opacity = '0';
+        }
+
+        const newBox = document.createElement('div');
+        Object.assign(newBox.style, {
+            backgroundColor: color,
+            position: 'absolute',
+            width: '400px',
+            height: '400px',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            top: '-200px',
+            opacity: '0'
+        });
+        newBox.className = 'box';
+        document.body.appendChild(newBox);
+
+        requestAnimationFrame(() => {
+            newBox.style.top = '50%';
+            newBox.style.opacity = '1';
+        });
+
+        currentBox = newBox;
+    });
+});
+        </script>
+</body>
+</html>
+
+
