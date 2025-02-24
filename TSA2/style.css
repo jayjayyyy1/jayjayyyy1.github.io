@@ -52,7 +52,7 @@ body {
     position: absolute;
     top: -200px; 
     left: 70% !important;
-    border-radius: 10px;
+    border-radius: 15px;
     transform: translateX(-50%);
     opacity: 0; 
     transition: top 1s ease, opacity 1s ease;
