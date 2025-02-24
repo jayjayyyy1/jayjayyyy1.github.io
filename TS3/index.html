@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>MY CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+       function Calculator() {
+            const display = document.querySelector("input[name='display']");
+
+            function updateDisplay(value) {
+                display.value += value;
+            }
+
+            function clearDisplay() {
+                display.value = '';
+            }
+
+            function deleteLastChar() {
+                display.value = display.value.slice(0, -1);
+            }
+
+            function calculate() {
+                try {
+                    display.value = eval(display.value);
+                } catch(e) {
+                    display.value = 'Error';
+                }
+            }
+
+            function toggleSign() {
+                display.value = display.value.startsWith('-') ? 
+                    display.value.substring(1) : '-' + display.value;
+            }
+
+            return { updateDisplay, clearDisplay, deleteLastChar, calculate, toggleSign };
+        }
+
+        let calc;
+        window.onload = () => calc = Calculator();
+    </script>
+</head>
+<body>
+    <div class="calculator">
+        <form>
+            <div class="display">
+                <input type="text" name="display" readonly>
+            </div>
+            <div class="buttons">
+                <input type="button" value="AC" onclick="calc.clearDisplay()" class="operator">
+                <input type="button" value="+/-" onclick="calc.toggleSign()" class="operator">
+                <input type="button" value="." onclick="calc.updateDisplay('.')" class="operator">
+                <input type="button" value="÷" onclick="calc.updateDisplay('/')" class="operator">
+                <input type="button" value="7" onclick="calc.updateDisplay('7')">
+                <input type="button" value="8" onclick="calc.updateDisplay('8')">
+                <input type="button" value="9" onclick="calc.updateDisplay('9')">
+                <input type="button" value="x" onclick="calc.updateDisplay('*')" class="operator">
+                <input type="button" value="4" onclick="calc.updateDisplay('4')">
+                <input type="button" value="5" onclick="calc.updateDisplay('5')">
+                <input type="button" value="6" onclick="calc.updateDisplay('6')">
+                <input type="button" value="-" onclick="calc.updateDisplay('-')" class="operator">
+                <input type="button" value="1" onclick="calc.updateDisplay('1')">
+                <input type="button" value="2" onclick="calc.updateDisplay('2')">
+                <input type="button" value="3" onclick="calc.updateDisplay('3')">
+                <input type="button" value="+" onclick="calc.updateDisplay('+')" class="operator">
+                <input type="button" value="00" onclick="calc.updateDisplay('00')">
+                <input type="button" value="0" onclick="calc.updateDisplay('0')">
+                <input type="button" value="DE" onclick="calc.deleteLastChar()" class="operator">
+                <input type="button" value="=" onclick="calc.calculate()" class="equal operator">
+            </div>
+        </form>
+    </div>
+   
+</body>
+</html>
