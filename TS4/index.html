@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('bg.jpg'); background-size: cover; background-attachment: fixed;">
+    <div class="container mt-4">
+        <h1 class="text-center">Restaurant Guide</h1>
+        <div class="row" id="menu-cards">
+            <div class="col-md-4">
+                <div class="card" onclick="showMenuDetails('Pasta', 'Delicious homemade pasta with fresh ingredients.', 'pasta.jpg')">
+                    <img src="pasta.jpg" class="card-img-top" alt="Pasta">
+                    <div class="card-body">
+                        <h5 class="card-title">Pasta</h5>
+                        <p class="card-text">Delicious homemade pasta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" onclick="showMenuDetails('Burger', 'Juicy grilled burger with fresh veggies.', 'burger.jpg')">
+                    <img src="burger.jpg" class="card-img-top" alt="Burger">
+                    <div class="card-body">
+                        <h5 class="card-title">Burger</h5>
+                        <p class="card-text">Juicy grilled burger.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" onclick="showMenuDetails('Salad', 'Fresh organic salad with a variety of greens.', 'salad.png')">
+                    <img src="salad.png" class="card-img-top" alt="Salad">
+                    <div class="card-body">
+                        <h5 class="card-title">Salad</h5>
+                        <p class="card-text">Fresh organic salad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pop-up Modal -->
+    <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="menuModalLabel">Menu Item Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-content">
+                    <!-- Dynamic content inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="menu-button" data-bs-dismiss="modal">Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showMenuDetails(title, description, image) {
+            document.getElementById('modal-content').innerHTML = `
+                <img src="${image}" class="img-fluid mb-3" alt="${title}">
+                <h3>${title}</h3>
+                <p>${description}</p>
+            `;
+            var myModal = new bootstrap.Modal(document.getElementById('menuModal'));
+            myModal.show();
+        }
+    </script>
+</body>
+</html>
