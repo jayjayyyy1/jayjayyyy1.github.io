@@ -8,68 +8,73 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="background-image: url('bg.jpg'); background-size: cover; background-attachment: fixed;">
-    <div class="container mt-4">
-        <h1 class="text-center">Restaurant Guide</h1>
-        <div class="row" id="menu-cards">
-            <div class="col-md-4">
-                <div class="card" onclick="showMenuDetails('Pasta', 'Delicious homemade pasta with fresh ingredients.', 'pasta.jpg')">
+    <div class="container mt-4 text-center">
+        <h1 class="restaurant-title">Best of Merriden<br><span>Restaurant Guide</span></h1>
+        <div class="row justify-content-center" id="menu-cards">
+            <div class="col-md-3">
+                <div class="card menu-card" data-details="Authentic Swiss Cuisine. A delightful mix of fresh vegetables and Swiss dressing.">
+                    <img src="salad.png" class="card-img-top" alt="Veggies Salad">
+                    <div class="card-body">
+                        <h5 class="card-title">VEGGIE SALAD</h5>
+                        <p class="card-text short-desc">Authentic Swiss Cuisine.</p>
+                        <button class="btn btn-primary see-more-btn">See More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card menu-card" data-details="Classic steakhouse experience with a juicy grilled patty and melted cheese.">
+                    <img src="burger.jpg" class="card-img-top" alt="Cheese Burger">
+                    <div class="card-body">
+                        <h5 class="card-title">GRILLED CHEESEBURGER</h5>
+                        <p class="card-text short-desc">Classic steakhouse experience.</p>
+                        <button class="btn btn-primary see-more-btn">See More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card menu-card" data-details="Traditional Italian dishes with rich sauces and fresh ingredients.">
                     <img src="pasta.jpg" class="card-img-top" alt="Pasta">
                     <div class="card-body">
-                        <h5 class="card-title">Pasta</h5>
-                        <p class="card-text">Delicious homemade pasta.</p>
+                        <h5 class="card-title">PASTA</h5>
+                        <p class="card-text short-desc">Traditional Italian Dishes.</p>
+                        <button class="btn btn-primary see-more-btn">See More</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card" onclick="showMenuDetails('Burger', 'Juicy grilled burger with fresh veggies.', 'burger.jpg')">
-                    <img src="burger.jpg" class="card-img-top" alt="Burger">
+            <div class="col-md-3">
+                <div class="card menu-card" data-details="Gourmet seafood platters with fresh and exotic ingredients.">
+                    <img src="pierre.png" class="card-img-top" alt="Pierre Platters">
                     <div class="card-body">
-                        <h5 class="card-title">Burger</h5>
-                        <p class="card-text">Juicy grilled burger.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" onclick="showMenuDetails('Salad', 'Fresh organic salad with a variety of greens.', 'salad.png')">
-                    <img src="salad.png" class="card-img-top" alt="Salad">
-                    <div class="card-body">
-                        <h5 class="card-title">Salad</h5>
-                        <p class="card-text">Fresh organic salad.</p>
+                        <h5 class="card-title">PIERRE PLATTERS</h5>
+                        <p class="card-text short-desc">Gourmet seafood platters.</p>
+                        <button class="btn btn-primary see-more-btn">See More</button>
                     </div>
                 </div>
             </div>
         </div>
+        <button class="btn btn-warning menu-btn">MAIN MENU</button>
     </div>
     
-    <!-- Pop-up Modal -->
-    <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    <!-- Slide-in Panel -->
+    <div class="menu-panel" id="menu-panel">
+        <button class="btn-close" id="close-panel"></button>
+        <div id="menu-content"></div>
+    </div>
+    
+    <!-- Detailed View Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="menuModalLabel">Menu Item Details</h5>
+                    <h5 class="modal-title" id="detailsModalLabel">Dish Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modal-content">
-                    <!-- Dynamic content inserted here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="menu-button" data-bs-dismiss="modal">Menu</button>
-                </div>
+                <div class="modal-body" id="detailsContent"></div>
             </div>
         </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function showMenuDetails(title, description, image) {
-            document.getElementById('modal-content').innerHTML = `
-                <img src="${image}" class="img-fluid mb-3" alt="${title}">
-                <h3>${title}</h3>
-                <p>${description}</p>
-            `;
-            var myModal = new bootstrap.Modal(document.getElementById('menuModal'));
-            myModal.show();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

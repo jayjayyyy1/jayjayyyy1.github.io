@@ -1,9 +1,11 @@
-
-        body {
+body {
             font-family: 'Lato', sans-serif;
             background-color: #fffce9;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .main-header {
@@ -198,6 +200,7 @@
             background-color: #567E90;
             color: white;
             padding: 2rem 4rem;
+            margin-top: auto;
         }
         
         .footer-top {
@@ -327,4 +330,111 @@
         .legal-notice.disclaimer {
             font-style: italic;
             margin-bottom: 3rem;
+        }
+
+        /* Profile Container Styles */
+        .card {
+            background-color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(86, 126, 144, 0.15);
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Orders Section Styles */
+        .container h3 {
+            color: #567E90;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .table-responsive {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(86, 126, 144, 0.1);
+            padding: 0.5rem;
+            margin: 0 auto;
+            max-width: 95%;
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table-warning {
+            background-color: #567E90 !important;
+        }
+        
+        .table-warning th {
+            color: rgb(8, 7, 7) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 1rem;
+            border: none;
+        }
+        
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        
+        .table td {
+            padding: 1rem;
+            vertical-align: middle;
+            color: #495057;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        /* Badge Styles */
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .bg-success {
+            background-color: #82c7b5 !important;
+        }
+        
+        .bg-warning {
+            background-color: #fad49f !important;
+        }
+        
+        /* Profile Picture Enhancement */
+        .rounded-circle {
+            border: 4px solid #567E90 !important;
+            box-shadow: 0 4px 12px rgba(86, 126, 144, 0.2);
+            transition: transform 0.2s ease;
+        }
+        
+        .rounded-circle:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Sign Out Button Enhancement */
+        .btn-warning {
+            background-color: #567E90;
+            border: none;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-warning:hover {
+            background-color: #436778;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(86, 126, 144, 0.2);
         }
