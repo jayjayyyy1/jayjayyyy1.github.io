@@ -145,3 +145,190 @@ h1 {
 .d-none {
     display: none;
 }
+
+.modal-content {
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#modalDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.modal-dialog {
+    max-width: 500px;
+}
+
+.header-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1060;
+    padding: 12px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #fff;
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.restaurant-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.restaurant-title span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.card.menu-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.see-more-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 8px 20px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 20px;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background-color: #2c3e50;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Modal Styling */
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.modal-header {
+    border-bottom: 2px solid #ffd700;
+    padding: 1.5rem;
+    background-color: #2c3e50;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+#modalImage {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#modalDescription {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+}
+
+.btn-close {
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
